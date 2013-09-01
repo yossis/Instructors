@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @instructor_text.name %>
+</p>
+
+<p>
+  <b>Val:</b>
+  <%= @instructor_text.val %>
+</p>
+
+
+<%= link_to 'Edit', edit_instructor_text_path(@instructor_text) %> |
+<%= link_to 'Back', instructor_texts_path %>

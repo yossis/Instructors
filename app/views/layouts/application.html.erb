@@ -3,11 +3,11 @@
 <head>
   <title>Instructors</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "application" , "theme"%>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<%= render 'layouts/header' %>
 <%= yield %>
 
 </body>

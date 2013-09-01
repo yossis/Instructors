@@ -1,0 +1,2 @@
+module InstructorTextsHelper
+end
