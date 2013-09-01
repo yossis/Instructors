@@ -128,8 +128,7 @@ readyState(function()
     /**
      * Scroll to top links
      */    
-    $('#back-top').click(function(event)
-    {
+    $('#back-top').click(function(event)     {
         $('#navigation a[data-nav="scroll"]').removeClass('active');
 
         var firstItem = $('#navigation a[data-nav="scroll"]:first');
@@ -143,8 +142,7 @@ readyState(function()
         return false;
     });
 
-    $('#logo').click(function(event)
-    {
+    $('#logo').click(function(event)  {
         $('#navigation a[data-nav="scroll"]').removeClass('active');
 
         var firstItem = $('#navigation a[data-nav="scroll"]:first');
