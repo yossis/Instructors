@@ -1,26 +1,54 @@
 var readyState = function(callback)
 {
-    var body = document.body;
-    
-    if(body && body.readyState == 'loaded')
-    {
-        callback();
-    }
-    else
-    {
-        if (window.addEventListener)
-        {
-            window.addEventListener('load', callback, false);
-        }
-        else
-        {
-            window.attachEvent('onload', callback);
-        }
-    }   
+  var body = document.body;
+  
+  if(body && body.readyState == 'loaded')
+  {
+      callback();
+  }
+  else
+  {
+      if (window.addEventListener)
+      {
+          window.addEventListener('load', callback, false);
+      }
+      else
+      {
+          window.attachEvent('onload', callback);
+      }
+  }   
 }
 
 readyState(function()
 {
+  /* Navigation */
+  // Do our DOM lookups beforehand
+    var nav_container = $("#header");
+    var nav = $("#header .container");
+
+    var top_spacing = 0;
+    var waypoint_offset = -60;
+
+    nav_container.waypoint({
+      handler: function(event, direction) {
+
+        if (direction == 'down') {
+
+            nav_container.css({'height': nav.outerHeight()});
+            nav.stop().addClass("navbar-fixed-top").css("top", -nav.outerHeight()).animate({"top": top_spacing});
+            
+        } else {
+
+            nav_container.css({'height': 'auto'});
+            nav.stop().removeClass("navbar-fixed-top").css("top", nav.outerHeight() + waypoint_offset).animate({"top": ""});
+
+        }
+
+      },
+      offset: function() {
+          return -nav.outerHeight() - waypoint_offset;
+      }
+    });
     /**
      * Scroll Page
      */
@@ -95,15 +123,15 @@ readyState(function()
         {
             $('.box').each(function()
             {
-                    if(($(self).scrollTop() + $('#header').height()) >= $(this).position().top && ($(self).scrollTop() + $('#header').height()) < ($(this).position().top + $(this).height()))
-                    {
-                            $("#navigation a[href='#/"+$(this).attr('id') + "']").addClass('active');
-                            setHashSilently($(this).attr('id'));
-                    }
-                    else
-                    {
-                            $("#navigation a[href='#/"+$(this).attr('id') + "']").removeClass('active');
-                    }
+              if(($(self).scrollTop() + $('#header').height()) >= $(this).position().top && ($(self).scrollTop() + $('#header').height()) < ($(this).position().top + $(this).height()))
+              {
+                      $("#navigation a[href='#/"+$(this).attr('id') + "']").addClass('active');
+                      setHashSilently($(this).attr('id'));
+              }
+              else
+              {
+                      $("#navigation a[href='#/"+$(this).attr('id') + "']").removeClass('active');
+              }
             });
         }
 
