@@ -1,4 +1,7 @@
 Instructors::Application.routes.draw do
+  resources :contacts
+
+
   resources :instructor_texts
 
 

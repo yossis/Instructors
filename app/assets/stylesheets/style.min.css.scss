@@ -195,16 +195,16 @@ footer {
   background: url(box1.jpg) center center no-repeat fixed;
 }
 #second {
-  background: url(bg9.jpg) center center no-repeat fixed;
+  background: url(bg29.jpg) center center no-repeat fixed;
 }
 
 #third {
-  background: url(box5.jpg) center center no-repeat fixed;
+  background: url(box2.jpg) center center no-repeat fixed;
   
 }
 
 #forth {
-  background: url(box7.jpg) center center no-repeat fixed;
+  background: url(bg10.jpg) center center no-repeat fixed;
   
 }
 
@@ -263,6 +263,7 @@ footer {
 #about {
   background-color: #81A8B8;
   color: whiteSmoke;
+  z-index: 9999;
   .quote div {
     font-weight: 300;
     padding: 10px 0;
@@ -502,6 +503,12 @@ section h2
     border-bottom-left-radius: 10px;
 }
 
+.brand {
+  color: #FFD675;
+  font-size: 3rem;
+  font-weight: 400;
+}
+
 .pull-center
 {
     text-align: center;
@@ -644,6 +651,7 @@ section h2
     border-radius: 10px;
     padding: 15px 20px;
     color: #fff;
+    z-index: 99999;
     background: #333;
     background: rgba(51, 51, 51, 0.75);
         -moz-transition: all 600ms;
