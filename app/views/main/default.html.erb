@@ -11,7 +11,9 @@
                         <hgroup id="intro" style="display: none">
                             <h2>Take&Make</h2>
                             <h3>Take what you want, Make what you love.</h3>
+                            <a href="#about" class="button btn btn-large btn-info"><i class="icon-circle-arrow-down"></i> Learn More</a>
                         </hgroup>
+
                     </div>
                 </div>
             </div>
@@ -22,7 +24,6 @@
     <section id="about">
        <h2>What's in the box?</h2>
        <div class="container quote">
-       <div>Hi gorgeous!</div>
        <div>This place is dedicated to all you girls who love and want to make beautiful things! Giving creators, the ability to simply focus on creating on their own terms; time and place, means that it would probably be more convenient to create more! How? By following fun-loving, leading instructors together with all the materials needed for creating the desired crafts.</div>
 
       <div><span class="brand">Take&Make</span> was born through the delirious local success of DeaLiri, so we have decided to expand, and would be delighted if you joined our team!</div>
@@ -38,7 +39,7 @@
                     <div class="panel-icon"><i class="icon-expand"></i></div> <!-- panel-icon -->
                     <div class="panel-info">
                       <h3>Online Course</h3>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                      
                     </div> <!-- panel-info -->
                   </div> <!-- panel-item -->
                 </div> <!-- span4 -->
@@ -49,8 +50,8 @@
                     <div class="panel-icon"><i class="icon-gift"></i></div> <!-- panel-icon -->
                     <div class="panel-info">
                       <h3>Course Kit</h3>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div> <!-- panel-info -->
+                     
+                     </div> <!-- panel-info -->
                   </div> <!-- panel-item -->
                 </div> <!-- span4 -->
                 
@@ -63,7 +64,7 @@
 
     </section>
     <section id="ono">
- <p class="quote container">We bring a personal and effective approach to every project we work on, which is why our clients love us and why they keep coming back.</p>
+ <p class="quote container">"I keep being flattered from the bracelet that I made from your box. my friends don't believe me when I tell them that I made it!!"</p>
     </section>
 
 
@@ -74,16 +75,16 @@
        <div class="span12">
           <div class="row">
             <div class="span4">
-              <div><i class="icon-cog"></i></div>
+              <div><i class="icon-star"></i></div>
               <h1>Platform</h1>
-              Be part of a growing community of leading DIY instructors; which through it you could expand your customer and follower base
+              Be part of a growing community of star DIY instructors; which through it you could expand your customer and follower base
             </div>
             <div class="span4">
               <div><i class="icon-th-large"></i></div>
               <h1>Branding</h1>
               So like all the leading pop-stars who have their own perfumes, you could 
 
-              have your own DIY kit named after you! We know, a dream come true J
+              have your own DIY kit named after you! We know, a dream come true <i class="icon-smile"></i>
             </div>
             <div class="span4">
               <div><i class="icon-money"></i></div>
@@ -111,39 +112,8 @@ to your doorstep.</div>
   <div class="row">
     <div class="span12">
       <div class="cform" id="contact-form">
-        <div id="sendmessage">
-           Your message has been sent. Thank you!
-        </div>
-        <%#= render 'contacts/form' , @contact: Contact.new%>
-        <form action="contact/contact.php" method="post" class="contactForm">
-          <div class="row">
-            <div class="span6">
-              <div class="field your-name">
-                <input type="text" name="your-name" placeholder="Your Name" class="cform-text string required" size="40" data-rule="maxlen:4" data-msg="Please enter at least 4 chars">
-                <div class="validation">
-                </div>
-              </div>
-              <div class="field your-email">
-                <input type="text" name="your-email" placeholder="Your Email" class="cform-text" size="40" data-rule="email" data-msg="Please enter a valid email">
-                <div class="validation">
-                </div>
-              </div>
-              <div class="field subject">
-                <input type="text" name="subject" placeholder="Your Website" class="cform-text" size="40" data-rule="maxlen:4" data-msg="Please enter at least 8 chars of subject">
-                <div class="validation">
-                </div>
-              </div>
-            </div>
-            <div class="span6">
-              <div class="field message">
-                <textarea name="message" class="cform-textarea" cols="40" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
-                <div class="validation">
-                </div>
-              </div>
-              <input type="submit" value="Send message" class="btn btn-theme pull-left">
-            </div>
-          </div>
-        </form>
+       
+       <%= render 'join_us' , :@contact => Contact.new%>
       </div>
     </div>
     <!-- ./span12 -->
@@ -225,22 +195,29 @@ what I needed to bring out my creativity!" <span>(Andrea B)</span></p>
             
             <div class="span12">
               
-              <h3 class="contact-slogan">Did you like what you saw? Want to be Instructor? Drop us a line now.</h3>
+             
               <div class="contact-email"><a href="mailto:info@takeandmake.co">info@takeandmake.co</a></div>
               <h3 class="contact-slogan">We are very cool, so why don't you follow us?</h3>
               
               <div class="contact-social">
-                <a href="http://facebook.com">
+                <a href="http://www.facebook.com/takeandmake" target="_blank">
                   <span class="icon-stack">
                     <i class="icon-circle bg-facebook icon-stack-base"></i>
                     <i class="icon-light icon-facebook"></i>
                   </span>
                 </a>
                
-                <a href="http://twitter.com">
+                <a href="http://twitter.com/Takeandmake1" target="_blank">
                   <span class="icon-stack">
                     <i class="icon-circle bg-twitter icon-stack-base"></i>
                     <i class="icon-twitter icon-light"></i>
+                  </span>
+                </a>
+
+                <a href="http://pinterest.com/takeandmake/boards" target="_blank">
+                  <span class="icon-stack">
+                    <i class="icon-circle bg-pinterest icon-stack-base"></i>
+                    <i class="icon-pinterest icon-light"></i>
                   </span>
                 </a>
                 

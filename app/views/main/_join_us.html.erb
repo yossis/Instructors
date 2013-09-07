@@ -1,0 +1,27 @@
+ <div class="alert alert-info hide">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  Your message sent successfuly.
+ </div>
+
+ <%= simple_form_for @contact , remote: true do |f| %>
+    <div class="row">
+      <div class="span6">
+        <div class="field your-name">
+        <%= f.input :name, label: false,  placeholder: 'Your Name'  %>
+        </div>
+        <div class="field your-email">
+        <%= f.input :email, label: false, placeholder: 'Your Email', wrapper_html: { class: 'class="cform-text"' }%>
+        </div>
+        <div class="field subject">
+        <%= f.input :website, label: false, placeholder: 'Your Website' %>
+        </div>
+      </div>
+      <div class="span6">
+        <div class="field message">
+        <%= f.input :message, as: :text, label: false , placeholder: 'Tell us about yourself'%>
+      </div>
+      <%= f.button :submit, value: 'Send a message', disable_with: 'Sending...',  class: 'btn btn-theme pull-left' %>
+    </div>
+  </div>
+<% end %>
+        

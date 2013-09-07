@@ -21,6 +21,27 @@ var readyState = function(callback)
 
 readyState(function()
 {
+
+  /***************************************************
+      MAIN NAVIGATION
+  ***************************************************/
+
+  $('#header .nav-collapse a, #intro a').on('click',function(e){
+      e.preventDefault();
+      
+      var anchor = $(this);
+
+      //animate content scroll
+      // $('html, body').stop().animate({
+      //   scrollTop: $(anchor.attr('href')).offset().top
+      // }, 900,'easeInOutExpo');
+
+      $('html, body').stop().animate({
+        scrollTop: $(anchor.attr('href')).offset().top
+      }, 1000);
+  }); 
+
+
   /* Navigation */
   // Do our DOM lookups beforehand
     // var nav_container = $("#header");
@@ -76,7 +97,7 @@ readyState(function()
     //  */
     function introPos()
     {
-        $('#intro').css({'margin-top':( ($('.box:first').height() /2) - $('#header').height() - ($('#intro').height() /2) )});
+        $('#intro').css({'margin-top':( ($('.box:first').height() /2) - ($('#intro').height() /2) )});
     }
 
     // /**
