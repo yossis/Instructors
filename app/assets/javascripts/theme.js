@@ -56,24 +56,30 @@ readyState(function()
     var mywindow = $(window);
     var htmlbody = $('html,body');
 
-    
-    section.waypoint(function (direction) {
+    // section.scroll(function(e){
+    //   if ($(this).scrollTop() == 0) {
+    //     var data = $(this).attr('id');
+    //     $('.navigation li[href="' + data + '"]"').addClass('active').siblings().removeClass('active');
+    //   }
+    // })
+    // section.waypoint(function (direction) {
 
+    //   var data = $(this).attr('id');
+    //   $('.navigation li[href="' + data + '"]"').addClass('active').siblings().removeClass('active');
+    // });
       
-        $(this).addClass('active').siblings().removeClass('active');
       
-      
-        // var datasection = $(this).attr('data-section');
+    //     // var datasection = $(this).attr('data-section');
 
-        // if (direction === 'down') {
-        //     $('.navigation li[data-section="' + datasection + '"]').addClass('active').siblings().removeClass('active');
-        // }
-        // else {
-        //   var newsection = parseInt(datasection) - 1;
-        //     $('.navigation li[data-section="' + newsection + '"]').addClass('active').siblings().removeClass('active');
-        // }
+    //     // if (direction === 'down') {
+    //     //     $('.navigation li[data-section="' + datasection + '"]').addClass('active').siblings().removeClass('active');
+    //     // }
+    //     // else {
+    //     //   var newsection = parseInt(datasection) - 1;
+    //     //     $('.navigation li[data-section="' + newsection + '"]').addClass('active').siblings().removeClass('active');
+    //     // }
 
-    });
+    // });
     
     // mywindow.scroll(function () {
     //     if (mywindow.scrollTop() == 0) {
