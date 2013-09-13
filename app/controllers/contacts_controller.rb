@@ -1,4 +1,5 @@
 class ContactsController < ApplicationController
+  http_basic_authenticate_with :name => "yosYos", :password => "yosYos", except: [:create , :new]
   # GET /contacts
   # GET /contacts.json
   def index

@@ -1,4 +1,5 @@
 class InstructorTextsController < ApplicationController
+  http_basic_authenticate_with :name => "yosYos", :password => "yosYos"
   # GET /instructor_texts
   # GET /instructor_texts.json
   def index
