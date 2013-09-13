@@ -37,6 +37,7 @@
         delay = 5000,
         walk = function() {},
         timer,
+        container = "#home",
         methods = {
 
         // Init plugin
@@ -52,6 +53,7 @@
             }
             $.extend( options, $.vegas.defaults.background, settings );
 
+
             if ( options.loading ) {
                 loading();
             }
@@ -59,7 +61,6 @@
             var $new = $background.clone();
             $new.css( {
                 'position': 'fixed',
-                'left': '0px',
                 'top': '0px'
             })
             .bind('load', function() {
@@ -81,14 +82,14 @@
                             $('.vegas-background')
                                 .not(this)
                                     .remove();
-                            $( 'body' ).trigger( 'vegascomplete', [ this, step - 1 ] );
+                            $( container ).trigger( 'vegascomplete', [ this, step - 1 ] );
                             options.complete.apply( $new, [ step - 1 ] );
                         });
                 } else {
                     $new.hide()
-                        .prependTo( 'body' )
+                        .prependTo( container )
                         .fadeIn( options.fade, function() {
-                            $( 'body' ).trigger( 'vegascomplete', [ this, step - 1 ] );
+                            $( container ).trigger( 'vegascomplete', [ this, step - 1 ] );
                             options.complete.apply( this, [ step - 1 ] );    
                         });
                 }
@@ -101,11 +102,11 @@
                     loaded();
                 }
 
-                $( 'body' ).trigger( 'vegasload', [ $current.get(0), step - 1 ] );
+                $( container ).trigger( 'vegasload', [ $current.get(0), step - 1 ] );
                 options.load.apply( $current.get(0), [ step - 1 ] );
 
                 if ( step ) {
-                    $( 'body' ).trigger( 'vegaswalk', [ $current.get(0), step - 1 ] );
+                    $( container ).trigger( 'vegaswalk', [ $current.get(0), step - 1 ] );
                     options.walk.apply( $current.get(0), [ step - 1 ] );
                 }
             })
@@ -158,7 +159,7 @@
                 $overlay.css( 'opacity', options.opacity );
             }
 
-            $overlay.prependTo( 'body' );
+            $overlay.prependTo( container );
 
             return $.vegas;
         },
@@ -227,7 +228,7 @@
             if ( !keepPause ) {
                 paused = false;
                 
-                $( 'body' ).trigger( 'vegasstart', [ $current.get(0), step - 1 ] );
+                $( container ).trigger( 'vegasstart', [ $current.get(0), step - 1 ] );
             }
 
             if ( !paused ) {
@@ -244,7 +245,7 @@
             if ( step ) {
                 $.vegas( 'slideshow', { step: step }, true );
 
-                $( 'body' ).trigger( 'vegasnext', [ $current.get(0), step - 1, from - 1 ] );
+                $( container ).trigger( 'vegasnext', [ $current.get(0), step - 1, from - 1 ] );
             }
 
             return $.vegas;
@@ -257,7 +258,7 @@
             if ( step ) {
                 $.vegas( 'slideshow', { step: step - 2 }, true );
 
-                $( 'body' ).trigger( 'vegasprevious', [ $current.get(0), step - 1, from - 1 ] );
+                $( container ).trigger( 'vegasprevious', [ $current.get(0), step - 1, from - 1 ] );
             }
 
             return $.vegas;
@@ -270,7 +271,7 @@
             if ( step ) {
                 $.vegas( 'slideshow', { step: s }, true );
 
-                $( 'body' ).trigger( 'vegasjump', [ $current.get(0), step - 1, from - 1 ] );
+                $( container ).trigger( 'vegasjump', [ $current.get(0), step - 1, from - 1 ] );
             }
 
             return $.vegas;
@@ -283,7 +284,7 @@
             paused = null;
             clearInterval( timer );
 
-            $( 'body' ).trigger( 'vegasstop', [ $current.get(0), from - 1 ] );
+            $( container ).trigger( 'vegasstop', [ $current.get(0), from - 1 ] );
 
             return $.vegas;
         },
@@ -293,7 +294,7 @@
             paused = true;
             clearInterval( timer );
 
-            $( 'body' ).trigger( 'vegaspause', [ $current.get(0), step - 1 ] );
+            $( container ).trigger( 'vegaspause', [ $current.get(0), step - 1 ] );
 
             return $.vegas;
         },
@@ -371,7 +372,6 @@
             'height': newHeight + 'px',
             'top': 'auto',
             'bottom': 'auto',
-            'left': 'auto',
             'right': 'auto'
         }
 
@@ -386,13 +386,13 @@
         } 
 
         if ( !isNaN( parseInt( options.align ) ) ) {
-            properties[ 'left' ] = ( 0 - ( newWidth - ww ) / 100 * parseInt( options.align ) ) + 'px';
+            //properties[ 'left' ] = ( 0 - ( newWidth - ww ) / 100 * parseInt( options.align ) ) + 'px';
         } else if ( options.align == 'left' ) {
-            properties[ 'left' ] = 0;
+            //properties[ 'left' ] = 0;
         } else if ( options.align == 'right' ) {
             properties[ 'right' ] = 0;
         } else {
-            properties[ 'left' ] = ( ww - newWidth ) / 2 ;
+           // properties[ 'left' ] = ( ww - newWidth ) / 2 ;
         }
 
         $img.css( properties );
@@ -400,7 +400,7 @@
 
     // Display the loading indicator
     function loading() {
-        $loading.prependTo( 'body' ).fadeIn();
+        $loading.prependTo( container ).fadeIn();
     }
 
     // Hide the loading indicator
@@ -412,8 +412,8 @@
 
     // Get the background image from the body
     function getBackground() {
-        if ( $( 'body' ).css( 'backgroundImage' ) ) {
-            return $( 'body' ).css( 'backgroundImage' ).replace( /url\("?(.*?)"?\)/i, '$1' );
+        if ( $( container ).css( 'backgroundImage' ) ) {
+            return $( container ).css( 'backgroundImage' ).replace( /url\("?(.*?)"?\)/i, '$1' );
         }
     }
 

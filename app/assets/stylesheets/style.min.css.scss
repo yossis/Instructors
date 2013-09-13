@@ -166,6 +166,15 @@ ul
   top: 0;
   width: 50px;
   z-index: 99999;
+  color: #fff;
+  a {
+    color: #fff;
+    &:hover {
+      background-color: #000;
+      filter: alpha(opacity=100);
+      opacity: 1;
+    }
+  }
 
 
 }
@@ -193,6 +202,10 @@ ul
     padding: 8px 0 8px 15px;
     text-transform: uppercase;
     width: 70%;
+    &:hover {
+      filter: alpha(opacity=100);
+      opacity: 1;
+    }
 }
 
 #nav ul li.active {
@@ -234,24 +247,48 @@ ul
 
 /* Expanded Nav Styling */
 
-.expanded #container {
-    left: 100px;
-    transform: translate3d(50px, 0px, 0px) scale3d(1, 1, 1);
-}
+.expanded  {
+    #container {
+      left: 100px;
+      transform: translate3d(50px, 0px, 0px) scale3d(1, 1, 1);
+    }
 
-.expanded #sidebar {
-  width: 150px;
-}
+    #sidebar {
+      width: 150px;
 
-.expanded #nav li {
-  width: 90%;
-}
-.expanded #nav li span {
-  display: inline-block;
-  height: auto;
-  opacity: 1;
-  overflow: visible;
-  width: auto;
+    }
+
+    #home {
+      margin-left: 150px;
+      overflow: hidden;
+      img{
+        left: 147px;
+        overflow: hidden;
+
+      }
+    }
+
+    .wrapper-sections{
+      margin-left: 150px;
+      overflow: hidden;
+    }
+
+    #nav{
+      li {
+        width: 90%;
+        span {
+          display: inline-block;
+          height: auto;
+          opacity: 1;
+          overflow: visible;
+          width: auto;
+        }
+      }
+    }
+    #ono, #second, #third, #forth {
+      background-position-x: 150px;
+    }
+
 }
 
 /*
@@ -661,7 +698,7 @@ section h2
  */
 .box
 {
-    width: 100%;
+    /*width: 100%;*/
     min-height: 100%;
 }
 
