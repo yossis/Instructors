@@ -1,30 +1,8 @@
-var readyState = function(callback)
-{
-  var body = document.body;
-  
-  if(body && body.readyState == 'loaded')
-  {
-      callback();
-  }
-  else
-  {
-      if (window.addEventListener)
-      {
-          window.addEventListener('load', callback, false);
-      }
-      else
-      {
-          window.attachEvent('onload', callback);
-      }
-  }   
-}
-
-readyState(function()
-{
-
+$(document).ready(function() {
   /***************************************************
       MAIN NAVIGATION
   ***************************************************/
+  $('.navigation li').addClass('active').siblings().removeClass('active');
 
   $('#header .nav-collapse a, #intro a, .navigation li a').on('click',function(e){
       e.preventDefault();
