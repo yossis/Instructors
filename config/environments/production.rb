@@ -20,6 +20,26 @@ Instructors::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  ENV["SMTP_USERNAME"] = 'yossi@takeandmake.co'
+  ENV["SMTP_PASSWORD"] = 'XPwJxvNFhGmIctjK45qm4Q'
+
+  config.action_mailer.default_url_options = { :host => 'takeandmake.co' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "smtp.mandrillapp.com",
+    port: 25,
+    authentication: "login",
+    enable_starttls_auto: true,
+    user_name: ENV["SMTP_USERNAME"],
+    password: ENV["SMTP_PASSWORD"]
+    #openssl_verify_mode => 'none'
+
+  }
+
+  config.after_initialize do
+    Rails.application.routes.default_url_options[:host] = 'takeandmake.co'
+  end
+
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 
