@@ -45,6 +45,7 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       if @contact.save
+        UserMailer.delay.new_registration_user(@contact)
         format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
         format.json { render json: @contact, status: :created, location: @contact }
         format.js
