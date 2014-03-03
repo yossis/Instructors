@@ -8,6 +8,7 @@ gem 'rails', '3.2.13'
 gem 'pg'
 gem 'simple_form'
 gem 'sidekiq'
+gem 'newrelic_rpm'
 
 
 # Gems used only for assets and not required
